@@ -20,8 +20,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+<!--        Spring Boot 包含了一套工具，可以使应用开发体验更加愉快。spring-boot-devtools 模块可包含在任何项目中，以提供额外的开发时（development-time）功能-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
+<!--    打包jar-->
+<!--    mvn package;打包-->
+<!--    java -jar target/jarfile;运行jar-->
+<!--    当运行完全打包的应用时，开发者工具将会自动禁用。如果您的应用使用了 java -jar 方式或者特殊的类加载器启动，那么它会被认为是一个生产级别应用。将 Maven 的依赖标记为可选或者在 Gradle 中使用 compileOnly 是防止您的项目被其他模块使用时 devtools 被应用到其它模块的最佳方法-->
+<!--    重新打包的归档默认情况下不包含 devtools。如果要使用某些远程 devtools 功能, 你需要禁用 excludeDevtools 构建属性以把 devtools 包含进来。该属性支持 Maven 和 Gradle 插件。-->
     <build>
         <plugins>
             <plugin>
@@ -32,3 +44,8 @@
     </build>
 
 </project>
+
+<!--常用的命令-->
+<!--运行项目  mvn spring-boot:run-->
+<!--打包项目  mvn package-->
+<!--运行已打包的jar  java -jar [jar文件路径]-->
