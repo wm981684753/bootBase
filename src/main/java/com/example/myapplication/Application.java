@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,10 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 //@EnableAutoConfiguration
 //@ComponentScan
 @RestController
+@MapperScan("com.example.myapplication.mapper")//找到mapper文件
 public class Application implements CommandLineRunner {
     private String show;
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     String home(){
         return show;
     }
