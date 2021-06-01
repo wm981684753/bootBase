@@ -29,5 +29,15 @@ public class NameSign extends Model {
 
     private String sign;
 
+    public void setId(int id){
+        this.id = id;
+    }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setSign(String sign){
+        this.sign = sign;
+    }
 }
