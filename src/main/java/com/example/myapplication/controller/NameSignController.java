@@ -39,7 +39,7 @@ public class NameSignController {
      */
     @RequestMapping(value = "/nameSignAll", method = RequestMethod.GET)
     public List<NameSign> getUserNameAll() {
-        return nameSignService.findAllNameSign();//手动添加的sql
+        return nameSignMapper.findAllNameSign();//手动添加的sql
     }
 
     /***********使用MyBatis-Plus的CRUD方法***************/

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@ComponentScan
 @RestController
 @MapperScan("com.example.myapplication.mapper")//找到mapper文件
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 1440)  //过期时间
 public class Application implements CommandLineRunner {
     private String show;
 
